@@ -1,0 +1,55 @@
+<html lang="pt-br
+">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relogio</title>
+    <style>
+        body,html{
+            background-color: #e7e7e7;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #div_relogio{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+            font-size: 48px;
+            padding: 20px;
+            background-color: black;
+            color: #e7e7e7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div_relogio">
+        
+    </div>
+</body>
+    <script>
+        //função gerada para criar um relógio dentro do div_relógio
+        function Relogio() {
+            var data = new Date() //declaração de variáveis para puxar a hora atual
+            var hr = data.getHours()
+            var min = data.getMinutes()
+            var s = data.getSeconds()
+//declaração de variáveis para 
+            var tempo_total = hr + ':' + min + ':' + s
+            var tempo = window.document.getElementById('div_relogio') //declaração da variável para incorporar a função do relógio no documento html
+            tempo.innerHTML = tempo_total
+        }
+        setInterval(Relogio, 500) //declarando o tempo de intervalo entre cada mudança do relógio
+    </script>
+
+
+</html>
